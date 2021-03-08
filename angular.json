@@ -3,7 +3,6 @@
   "cli": {
     "defaultCollection": "@nrwl/angular"
   },
-  "defaultProject": "degeaba",
   "schematics": {
     "@nrwl/angular": {
       "application": {
@@ -31,120 +30,5 @@
       "style": "css"
     }
   },
-  "projects": {
-    "degeaba": {
-      "projectType": "application",
-      "root": "apps/degeaba",
-      "sourceRoot": "apps/degeaba/src",
-      "prefix": "literate-octo-engine",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:browser",
-          "options": {
-            "outputPath": "dist/apps/degeaba",
-            "index": "apps/degeaba/src/index.html",
-            "main": "apps/degeaba/src/main.ts",
-            "polyfills": "apps/degeaba/src/polyfills.ts",
-            "tsConfig": "apps/degeaba/tsconfig.app.json",
-            "aot": true,
-            "assets": [
-              "apps/degeaba/src/favicon.ico",
-              "apps/degeaba/src/assets"
-            ],
-            "styles": ["apps/degeaba/src/styles.css"],
-            "scripts": []
-          },
-          "configurations": {
-            "production": {
-              "fileReplacements": [
-                {
-                  "replace": "apps/degeaba/src/environments/environment.ts",
-                  "with": "apps/degeaba/src/environments/environment.prod.ts"
-                }
-              ],
-              "optimization": true,
-              "outputHashing": "all",
-              "sourceMap": false,
-              "namedChunks": false,
-              "extractLicenses": true,
-              "vendorChunk": false,
-              "buildOptimizer": true,
-              "budgets": [
-                {
-                  "type": "initial",
-                  "maximumWarning": "2mb",
-                  "maximumError": "5mb"
-                },
-                {
-                  "type": "anyComponentStyle",
-                  "maximumWarning": "6kb",
-                  "maximumError": "10kb"
-                }
-              ]
-            }
-          }
-        },
-        "serve": {
-          "builder": "@angular-devkit/build-angular:dev-server",
-          "options": {
-            "browserTarget": "degeaba:build"
-          },
-          "configurations": {
-            "production": {
-              "browserTarget": "degeaba:build:production"
-            }
-          }
-        },
-        "extract-i18n": {
-          "builder": "@angular-devkit/build-angular:extract-i18n",
-          "options": {
-            "browserTarget": "degeaba:build"
-          }
-        },
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "apps/degeaba/src/**/*.ts",
-              "apps/degeaba/src/**/*.html"
-            ]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/apps/degeaba"],
-          "options": {
-            "jestConfig": "apps/degeaba/jest.config.js",
-            "passWithNoTests": true
-          }
-        }
-      }
-    },
-    "degeaba-e2e": {
-      "root": "apps/degeaba-e2e",
-      "sourceRoot": "apps/degeaba-e2e/src",
-      "projectType": "application",
-      "architect": {
-        "e2e": {
-          "builder": "@nrwl/cypress:cypress",
-          "options": {
-            "cypressConfig": "apps/degeaba-e2e/cypress.json",
-            "tsConfig": "apps/degeaba-e2e/tsconfig.e2e.json",
-            "devServerTarget": "degeaba:serve"
-          },
-          "configurations": {
-            "production": {
-              "devServerTarget": "degeaba:serve:production"
-            }
-          }
-        },
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": ["apps/degeaba-e2e/**/*.{js,ts}"]
-          }
-        }
-      }
-    }
-  }
+  "projects": {}
 }
