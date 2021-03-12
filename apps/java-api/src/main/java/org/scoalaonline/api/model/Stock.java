@@ -24,7 +24,7 @@ public class Stock
 
   @Column(name = "stock_median_price", nullable = false, precision = 2)
   private Double stockMedianPrice;
-  //de facut o lista care sa primeasca inputs de la useri pe ultimele 3 luni
+  // de facut o lista care sa primeasca inputs de la useri pe ultimele 3 luni
   // pentru pretul stock ului
 
   @ManyToOne
@@ -44,6 +44,8 @@ public class Stock
   public Double getStockPrice() { return stockPrice; }
 
   public Double getStockMedianPrice() { return stockMedianPrice; }
+
+  public ETF getETF() { return etf; }
   //endregion
 
   //region Setters
@@ -56,6 +58,8 @@ public class Stock
   public void setStockPrice(Double stockPrice) { this.stockPrice = stockPrice; }
 
   public void setStockMedianPrice(Double stockMedianPrice) { this.stockMedianPrice = stockMedianPrice; }
+
+  public void setETF(ETF etf) { this.etf = etf; }
   //endregion
 
   //region Equals & HashCode
@@ -66,6 +70,39 @@ public class Stock
     if (o == null | getClass() != o.getClass()) return false;
     Stock stock = (Stock) o;
     return id == stock.id &&
-
+        etf == stock.etf &&
+        stockName.equals(stock.stockName) &&
+        tickerName.equals(stock.tickerName) &&
+        stockPrice.equals(stock.stockPrice) &&
+        stockMedianPrice.equals(stock.stockMedianPrice)
   }
+
+  @Override
+  public int hashCode()
+  {
+      return Objects.hash(id, stockName, stockPrice, stockMedianPrice, etf);
+  }
+  //endregion
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
