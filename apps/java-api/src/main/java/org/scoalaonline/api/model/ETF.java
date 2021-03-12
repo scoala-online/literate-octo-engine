@@ -81,15 +81,15 @@ public class ETF
     this.stock_1 = new HashMap<String, Double>(stock_ticker, stock_value);
   }
 
-  public void setEtfStock1 (String stock_ticker, Double stock_value){
+  public void setEtfStock2 (String stock_ticker, Double stock_value){
     this.stock_2 = new HashMap<String, Double>(stock_ticker, stock_value);
   }
 
-  public void setEtfStock1 (String stock_ticker, Double stock_value){
+  public void setEtfStock3 (String stock_ticker, Double stock_value){
     this.stock_3 = new HashMap<String, Double>(stock_ticker, stock_value);
   }
 
-  public void setEtfStock1 (String stock_ticker, Double stock_value){
+  public void setEtfStock4 (String stock_ticker, Double stock_value){
     this.stock_4 = new HashMap<String, Double>(stock_ticker, stock_value);
   }
 
