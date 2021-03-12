@@ -2,6 +2,7 @@ package org.scoalaonline.api.model;
 
 import javax.persistence.*;
 import java.util.Objects;
+import java.util.Map;
 
 @Entity
 @Table(name = "etf")
