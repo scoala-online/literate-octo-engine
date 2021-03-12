@@ -3,6 +3,7 @@ package org.scoalaonline.api.model;
 import javax.persistence.*;
 import java.util.Objects;
 import java.util.Map;
+import java.util.HashMap;
 
 @Entity
 @Table(name = "etf")
@@ -93,5 +94,23 @@ public class ETF
   }
 
   //--------------- Equals & Hashcode ---------------
-
+  @Override
+  public boolean equals(Object o)
+  {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+    ETF etf = (ETF) o;
+    return id == etf.id &&
+      name.equals(etf.name) &&
+      ticker.equals(etf.ticker) &&
+      stock_1.equals(etf.stock_1) &&
+      stock_2.equals(etf.stock_2) &&
+      stock_3.equals(etf.stock_3) &&
+      stock_4.equals(etf.stock_4);
+  }
+  @Override
+  public int hashCode()
+  {
+    return Objects.hash(id, name, ticker, stock_1, stock_2, stock_3, stock_4);
+  }
 }
