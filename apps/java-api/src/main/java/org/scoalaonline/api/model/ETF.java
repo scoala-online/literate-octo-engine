@@ -1,4 +1,4 @@
-package org.scoalaonline.api.model;
+package main.java.org.scoalaonline.api.model;
 
 import javax.persistence.*;
 import java.util.Objects;
