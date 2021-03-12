@@ -1,6 +1,5 @@
 package org.scoalaonline.api.model;
 
-<<<<<<< Updated upstream
 import javax.persistence.*;
 import java.util.Objects;
 
@@ -35,7 +34,4 @@ public class ETF
 
   public ETF(){
   }
-=======
-public class ETF {
->>>>>>> Stashed changes
 }
