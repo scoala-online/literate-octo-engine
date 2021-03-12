@@ -45,7 +45,7 @@ public class ETF
   }
 
   public String getEtfTicker(){
-    return tricker;
+    return ticker;
   }
 
   public Map<String, Double> getStock1(){
@@ -92,5 +92,6 @@ public class ETF
     this.stock_4 = new HashMap<String, Double>(stock_ticker, stock_value);
   }
 
+  //--------------- Equals & Hashcode ---------------
 
 }
