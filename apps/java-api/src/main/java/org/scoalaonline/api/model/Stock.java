@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
-@Table(name="stocks")
+@Table(name="stock")
 public class Stock
 {
   //region Fields
@@ -74,7 +74,7 @@ public class Stock
         stockName.equals(stock.stockName) &&
         tickerName.equals(stock.tickerName) &&
         stockPrice.equals(stock.stockPrice) &&
-        stockMedianPrice.equals(stock.stockMedianPrice)
+        stockMedianPrice.equals(stock.stockMedianPrice);
   }
 
   @Override
