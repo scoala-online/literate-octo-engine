@@ -2,8 +2,6 @@ package org.scoalaonline.api.model;
 
 import javax.persistence.*;
 import java.util.Objects;
-import java.util.Map;
-import java.util.HashMap;
 
 @Entity
 @Table(name = "etf")
@@ -22,17 +20,6 @@ public class ETF
   @Column(name = "etf_ticker", nullable = false, length = 10)
   private String ticker;
 
-  @Column(name = "stock_1", nullable = false)
-  private Map<String, Double> stock_1;
-
-  @Column(name = "stock_2", nullable = false)
-  private Map<String, Double> stock_2;
-
-  @Column(name = "stock_3", nullable = true)
-  private Map<String, Double> stock_3;
-
-  @Column(name = "stock_4", nullable = true)
-  private Map<String, Double> stock_4;
 
   public ETF(){
   }
@@ -49,22 +36,6 @@ public class ETF
     return ticker;
   }
 
-  public Map<String, Double> getStock1(){
-    return stock_1;
-  }
-
-  public Map<String, Double> getStock2(){
-    return stock_2;
-  }
-
-  public Map<String, Double> getStock_3(){
-    return stock_3;
-  }
-
-  public Map<String, Double> getStock_4(){
-    return stock_4;
-  }
-
   //--------------- Setters ---------------
   public void setId(long id) {
     this.id = id;
@@ -77,26 +48,6 @@ public class ETF
     this.ticker = ticker;
   }
 
-  public void setEtfStock1 (String stock_ticker, Double stock_value){
-    this.stock_1 = new HashMap<String, Double>();
-    this.stock_1.put(stock_ticker, stock_value);
-  }
-
-  public void setEtfStock2 (String stock_ticker, Double stock_value){
-    this.stock_2 = new HashMap<String, Double>();
-    this.stock_2.put(stock_ticker, stock_value);
-  }
-
-  public void setEtfStock3 (String stock_ticker, Double stock_value){
-    this.stock_3 = new HashMap<String, Double>();
-    this.stock_3.put(stock_ticker, stock_value);
-  }
-
-  public void setEtfStock4 (String stock_ticker, Double stock_value){
-    this.stock_4 = new HashMap<String, Double>();
-    this.stock_4.put(stock_ticker, stock_value);
-  }
-
   //--------------- Equals & Hashcode ---------------
   @Override
   public boolean equals(Object o)
@@ -106,15 +57,11 @@ public class ETF
     ETF etf = (ETF) o;
     return id == etf.id &&
       name.equals(etf.name) &&
-      ticker.equals(etf.ticker) &&
-      stock_1.equals(etf.stock_1) &&
-      stock_2.equals(etf.stock_2) &&
-      stock_3.equals(etf.stock_3) &&
-      stock_4.equals(etf.stock_4);
+      ticker.equals(etf.ticker);
   }
   @Override
   public int hashCode()
   {
-    return Objects.hash(id, name, ticker, stock_1, stock_2, stock_3, stock_4);
+    return Objects.hash(id, name, ticker);
   }
 }
