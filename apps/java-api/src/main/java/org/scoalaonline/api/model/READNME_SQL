@@ -8,4 +8,4 @@ LEFT JOIN stock  ON stock.stock_id = etf_stock.stock_id
 
 # INSERT INTO etf_stock (etf_id, stock_id, percentage) VALUES (1, 1, 0.6), (1, 2, 0.4)
 # SELECT * FROM etf_stock
-# yaaay
+# yaaay.muie_cristi
