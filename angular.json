@@ -1,7 +1,8 @@
 {
   "version": 1,
   "cli": {
-    "defaultCollection": "@nrwl/angular"
+    "defaultCollection": "@nrwl/angular",
+    "analytics": "966560b9-6665-4358-bafb-9388d02310ac"
   },
   "defaultProject": "react-app",
   "schematics": {
