@@ -1,0 +1,11 @@
+# INSERT INTO stock (stock_id, stock_median_price, stock_name, stock_price, stock_ticker)
+# VALUES (2, 3203.81, 'Amazon', 3287.80, '$AMZN') , (3, 538.98,'Netflix',546.93,'$NFLX');
+# INSERT INTO etf (etf_id, etf_name, etf_ticker) VALUES (1, 'VALEAETF','$VAL');
+SELECT etf.etf_name, etf.etf_ticker, stock.stock_name, etf_stock.percentage FROM
+etf
+INNER JOIN etf_stock ON etf_stock.etf_id=etf.etf_id
+LEFT JOIN stock  ON stock.stock_id = etf_stock.stock_id
+
+# INSERT INTO etf_stock (etf_id, stock_id, percentage) VALUES (1, 1, 0.6), (1, 2, 0.4)
+# SELECT * FROM etf_stock
+# yaaay
